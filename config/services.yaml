@@ -19,6 +19,11 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
-
+    UrlShortener\UrlShortener:
+        class: UrlShortener\UrlShortener
+#        arguments:
+#            $repository:
+    UrlShortener\Repositories\IRepository:
+        class: App\Repository\UrlShortenerRepository
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

@@ -6,6 +6,9 @@ RUN apt-get -y update && apt-get -y install git unzip vim rsync
 
 RUN docker-php-ext-install pdo pdo_mysql
 
+RUN curl -sS https://get.symfony.com/cli/installer | bash
+RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
+
 RUN pecl install xdebug && docker-php-ext-enable xdebug;
 COPY ./docker/configs/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
